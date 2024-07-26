@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid grid-cols-1 gap-2 mx-6">
+    <a class="text-lg mt-6 hover:text-blue-400" href="/jobs">&#8592; All Jobs</a>
+    <h2 class="text-3xl">{{ job["title"] }}</h2>
+    <h2 class="text-2xl">{{ job["location"] }}</h2>
+    <h2 class="text-2xl">{{ job["company"] }}</h2>
+    <div>
+        <h3 class="text-xl">Responsibilities</h3>
+        <p>{{ job["description"] }}</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id voluptatem nam, non itaque architecto, praesentium ullam consequuntur debitis voluptate cupiditate ducimus quo nobis blanditiis laboriosam tenetur at vel nesciunt autem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id voluptatem nam, non itaque architecto, praesentium ullam consequuntur debitis voluptate cupiditate ducimus quo nobis blanditiis laboriosam tenetur at vel nesciunt autem.</p>
+    </div>
+    <div>
+        <h3 class="text-xl">Requirements</h3>
+        <ul>
+            {% for item in job["requirements"] %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h3 class="text-xl">Salary</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur maiores nesciunt adipisci consequatur beatae molestias magnam quos incidunt quis, reprehenderit facere quibusdam, autem cupiditate! Facilis porro aliquid eligendi reprehenderit assumenda?</p>
+        <p>Amount: {{ job["salary"] }}</p>
+    </div>
+
+    <div>
+        <form class="grid grid-cols-1 gap-2 m-4 w-3/4" action="/apply" method="post">
+            <label for="name">Name:</label>
+            <input class="border border-gray-500 rounded p-2 w-1/2" type="text" name="name" id="name">
+            
+            <label for="email">Email:</label>
+            <input class="border border-gray-500 rounded p-2 w-1/2" type="text" name="email" id="email">
+
+            <label for="linkedin">LinkedIn:</label>
+            <input class="border border-gray-500 rounded p-2 w-1/2" type="text" name="linkedin" id="linkedin">
+            
+            <label for="education">Education:</label>
+            <textarea class="border border-gray-500 rounded h-48 p-2" name="education" id="education"></textarea>
+
+            <label for="work">Work Experience:</label>
+            <textarea class="border border-gray-500 rounded h-48 p-2" name="work" id="work"></textarea>
+
+            <label for="resume">Resume:</label>
+            <input class="" type="file" name="resume" id="resume">
+
+            <button class="border border-gray-500 rounded bg-gray-200 w-24 mt-4 justify-self-center hover:text-white hover:bg-gray-600">Apply</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

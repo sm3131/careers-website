@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid grid-cols-1 justify-items-center m-6">
+    <h1 class="text-blue-300 text-3xl">Explore Tech Genesis Jobs</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, est ipsa at tempore consequuntur eos veniam repudiandae aperiam provident voluptatibus ipsam quasi neque accusamus officiis, ducimus nulla illo delectus non!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, est ipsa at tempore consequuntur eos veniam repudiandae aperiam provident voluptatibus ipsam quasi neque accusamus officiis, ducimus nulla illo delectus non!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, est ipsa at tempore consequuntur eos veniam repudiandae aperiam provident voluptatibus ipsam quasi neque accusamus officiis, ducimus nulla illo delectus non!</p>
+    
+    <h2 class="text-center text-2xl">Tech Job Articles</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 w-full">
+        {% for key, article in articles.items() %}
+        <div class="flex flex-col justify-center gap-4 border border-gray-500 rounded p-4">
+            <div>
+                <h3 class="text-xl">{{ article["title"] }}</h3>
+                <p>{{ article["author"]}}</p>
+            </div>
+            <p>{{ article["preview"] }}</p>
+            <a href="/article/{{ key }}" class="self-center border border-gray-500 rounded bg-gray-200 py-2 px-6 hover:bg-gray-600 hover:text-white">Full Article</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid grid-cols-1 gap-2 mt-4 w-full">
+    <h2 class="text-center text-2xl">Contact Tech Genesis</h2>
+    <div>
+        <form class="grid grid-cols-1 gap-2 m-4 w-3/4" action="/apply" method="post">
+            <label for="name">Name:</label>
+            <input class="border border-gray-500 rounded" type="text" name="name" id="name">
+            
+            <label for="email">Email:</label>
+            <input class="border border-gray-500 rounded" type="text" name="email" id="email">
+            
+            <label for="message">Message:</label>
+            <input class="border border-gray-500 rounded" type="textarea" name="message" id="other">
+            <button class="border border-gray-500 rounded bg-gray-200 w-24">Apply</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
